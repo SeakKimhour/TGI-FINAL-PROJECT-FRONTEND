@@ -1,10 +1,17 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { authHeader } from './auth-header.service';
+import { LocalService } from "./local-storage.service";
 @Injectable()
 
 export class CategoryService{
-  constructor(private http : HttpClient, private httpHeader:authHeader ){}
+  constructor(private http : HttpClient, private httpHeader:authHeader ,private localStore: LocalService){}
+  deleteCategory(id:string){
+    let httpOptions = {
+      headers :this.httpHeader.authheader('token')
+    }
+     return this.http.post('https://tgi.final.kunapheap.com/category/delete?id='+id,null,httpOptions)
+  }
   getAllCategory(){
     let httpOptions = {
       headers :this.httpHeader.authheader('token'),
@@ -14,16 +21,8 @@ export class CategoryService{
     }
      return this.http.get('https://tgi.final.kunapheap.com/category',httpOptions)
   }
-  deleteCategory(id:any){
-    let httpOptions = {
-      headers :this.httpHeader.authheader('token'),
-      body:null,
-      param : null,
 
-    }
-    console.log(httpOptions);
 
-     return this.http.post('https://tgi.final.kunapheap.com/category/delete?id='+id,httpOptions)
-  }
+
 
 }
