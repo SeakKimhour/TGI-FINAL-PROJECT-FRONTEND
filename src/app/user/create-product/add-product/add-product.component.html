@@ -48,7 +48,7 @@
               <h3 style="color: white" class="pt-3">Product Information</h3>
 
               <label for="exampleInputPassword1">Title</label>
-              <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="title" placeholder="Title" />
+              <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="title" placeholder="Title" required/>
 
 
               <div class="row">
@@ -63,7 +63,7 @@
 
                 <div class="col-lg-6">
                   <label for="exampleInputPassword1">Model</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="model" placeholder="Model" />
+                  <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="model" placeholder="Model" required/>
                 </div>
               </div>
 
@@ -71,58 +71,58 @@
               <div class="row">
                 <div class="col-lg-6">
                   <label for="exampleInputPassword1">Storage</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="storage" placeholder="Storage" />
+                  <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="storage" placeholder="Storage" required/>
                 </div>
 
 
                 <div class="col-lg-6">
                   <label for="exampleInputPassword1">Price</label>
-                  <input type="number" class="form-control" id="exampleInputPassword1"  formControlName="price" placeholder="Price" />
+                  <input type="number" class="form-control" id="exampleInputPassword1"  formControlName="price" placeholder="Price" required/>
                 </div>
               </div>
 
 
               <label for="exampleInputPassword1">Condition</label>
-              <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="condition" placeholder="Condition" />
+              <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="condition" placeholder="Condition" required/>
 
               <h3 style="color: white" class="mt-5">Contact Information</h3>
               <div class="row">
                <div class="col-lg-6">
                   <label for="exampleInputPassword1">Contact number</label>
-                  <input type="number" class="form-control" id="exampleInputPassword1"  formControlName="contact_number" placeholder="Contact number" />
+                  <input type="number" class="form-control" id="exampleInputPassword1"  formControlName="contact_number" placeholder="Contact number" required/>
                </div>
 
                 <div class="col-lg-6">
                   <label for="exampleInputPassword1">Photo</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="photo" placeholder="Photo" />
+                  <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="photo" placeholder="Photo" required/>
                 </div>
               </div>
               <label for="exampleInputPassword1">Description</label>
-              <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="description" placeholder="Description" />
+              <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="description" placeholder="Description" required/>
 
 
 
             </div>
-            <button (click)="onNext()" class="btn button-content">Next</button>
+            <button (click)="onNext()" [disabled]="!form.value.title || !form.value.brand || !form.value.model || !form.value.storage || !form.value.price || !form.value.condition || !form.value.contact_number || !form.value.photo || !form.value.description" class="btn button-content">Next</button>
           </div>
 
           <div id="test-l-3" class="content">
             <div class="form-group">
               <label for="exampleInputPassword1">Username</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="username" placeholder="Username" />
+              <input type="text" class="form-control" id="exampleInputPassword1" formControlName="username" placeholder="Username" required/>
 
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password" />
+              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password" required/>
 
             </div>
 
-            <button (click)="onNext()" class="btn button-content">Next</button>
+            <button [disabled]="!form.value.username || !form.value.password" (click)="onNext()" class="btn button-content">Next</button>
           </div>
 
           <div id="test-l-4" class="content text-center">
             <br>
             <p class="text-white">Congratulations! Your item is up to sale.</p>
-            <button type="submit" (click)="onSubmit()" class=" btn button-content">Submit</button>
+            <button type="submit" (click)="onSubmit()" class=" btn button-content" [disabled]="!form.valid">Submit</button>
 
           </div>
         </form>

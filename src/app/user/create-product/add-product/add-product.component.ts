@@ -12,7 +12,16 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  listBrands : any = []
 
+  async ngOnInit() {
+    this.stepper = new Stepper(document.querySelector('#stepper1')!, {
+      linear: false,
+      animation: true
+    }),
+    this.listBrands = await this._brandService.getAllBrand()
+    console.log(this.listBrands)
+  }
   form : UntypedFormGroup
 
   name = 'Angular';
@@ -43,10 +52,9 @@ export class AddProductComponent implements OnInit {
 
 
 
-  onSubmit() {
+  async onSubmit() {
     let addProduct = {
       product_name: this.form.value.title,
-      // product_brand_id: "8c119cf4-9a71-4cdb-9a67-b4213857c84c",
       product_brand_id: this.form.value.brand,
       product_storage: this.form.value.storage,
       product_price: this.form.value.price,
@@ -55,21 +63,19 @@ export class AddProductComponent implements OnInit {
       product_description: this.form.value.description,
       image_url: this.form.value.photo
     }
-    console.log(this.form.value);
-    this._productService.createProduct(addProduct);
-    console.log(addProduct);
-    this._toastr.success('Product Added Successfully','')
-    this._router.navigate(['/home'])
+    try {
+      this._productService.createProduct(addProduct);
+      this._toastr.success('Product Added Successfully','')
+      this._router.navigate(['/user/home'])
+    } catch (error) {
+      this._toastr.error('Something went wrong','')
+
+    }
+
   }
 
-  listBrands : any = []
-
-  async ngOnInit() {
-    this.stepper = new Stepper(document.querySelector('#stepper1')!, {
-      linear: false,
-      animation: true
-    }),
-    this.listBrands = await this._brandService.getAllBrand()
-    console.log(this.listBrands)
+  onBackHome() {
   }
+
+
 }
