@@ -15,7 +15,6 @@ import { HttpClientModule} from '@angular/common/http'
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-gard.service';
 import { FeatureProductComponent } from './user/product display/featureProduct/featureProduct.component';
-
 import { CategoryComponent } from './user/product display/category/category.component';
 import { NewProductComponent } from './user/product display/newProduct/newProduct.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -32,6 +31,7 @@ import { TopSaleComponent } from './user/product display/topSale/topSale.compone
 import { DiscountProductComponent } from './user/product display/discountProduct/discountProduct.component';
 import { AddProductComponent } from './user/create-product/add-product/add-product.component';
 import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.guard';
+import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
 
 const appRoutes : Routes = [
   {path: '', component: Sign_inComponent},
@@ -59,6 +59,7 @@ const appRoutes : Routes = [
     FavoriteProductComponent,
     AddProductComponent,
     Sign_upComponent,
+    AdminCategoryComponentComponent
   ],
   imports: [
 
