@@ -1,0 +1,23 @@
+.profile-page{
+  margin-top: 4rem;
+}
+.profile img{
+  width: 200px;
+  height: 200px;
+}
+.info{
+  width: 100%;
+}
+
+.nightmode i {
+  color:  #FF4C29;
+}
+
+.product-img img{
+  width: 200px;
+  height: 200px;
+}
+.product-info{
+  background-color: #D9D9D9;
+  width: 100%;
+}

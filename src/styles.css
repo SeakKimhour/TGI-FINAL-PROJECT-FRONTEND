@@ -1,0 +1,81 @@
+
+*{
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.discount-products .owl-next, .discount-products .owl-prev{
+  background: rgba(158, 158, 158 / 28%) !important;
+  color: #222 !important;
+  height: 40px;
+  width: 40px;
+  /* height: 60px;
+  width: 60px; */
+  /* border-radius: 50% !important; */
+  position : absolute;
+  top: -18%;
+  transition: .3 all ease;
+}
+.discount-products .owl-next{
+  /* right: -68px; */
+  right: -20px;
+  transform: translate(-50%, -50%);
+}
+.discount-products .owl-prev{
+  right: 30px;
+  /* left: -8px; */
+  transform: translate(-50%, -50%);
+}
+
+.discount-products .owl-next:hover, .discount-products .owl-prev:hover{
+  background: #FF4C29 !important;
+  color: #fff !important;
+}
+
+.discount-products .owl-next i, .discount-products .owl-prev i{
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.topSale-products .owl-next, .topSale-products .owl-prev{
+  background: rgba(158, 158, 158 / 28%) !important;
+  color: #222 !important;
+  height: 40px;
+  width: 40px;
+  /* height: 60px;
+  width: 60px; */
+  /* border-radius: 50% !important; */
+  position : absolute;
+  top: -18%;
+  transition: .3 all ease;
+}
+.topSale-products .owl-next{
+  /* right: -68px; */
+  right: -20px;
+  transform: translate(-50%, -50%);
+}
+.topSale-products .owl-prev{
+  right: 30px;
+  /* left: -8px; */
+  transform: translate(-50%, -50%);
+}
+
+.topSale-products .owl-next:hover, .topSale-products .owl-prev:hover{
+  background: #FF4C29 !important;
+  color: #fff !important;
+}
+
+.topSale-products .owl-next i, .topSale-products .owl-prev i{
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

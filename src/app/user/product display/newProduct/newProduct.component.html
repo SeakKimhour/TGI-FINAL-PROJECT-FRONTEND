@@ -1,0 +1,45 @@
+<!-- New Product -->
+<div class="container new-product">
+  <div class="d-flex justify-content-between">
+    <h2 class="fw-bold">New Product</h2>
+    <button class="btn"  style="color:#FF4C29">See all</button>
+  </div>
+  <div class="row g-2 mt-5">
+      <div class="col-lg-3 col-md-6 col-12" *ngFor="let p of listProduct">
+          <div class="card">
+              <img [src]="p.image_url" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product Name : {{p.product_name}}</h6>
+                  <h6 style="color:#FF4C29">{{p. product_price}} $</h6>
+              </div>
+          </div>
+      </div>
+      <!-- <div class="col-lg-3 col-md-6 col-12">P
+          <div class="card">
+              <img src="https://m.media-amazon.com/images/I/81KoSSAwH2L._SL1500_.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <h6 style="color:#FF4C29">20000$</h6>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://m.media-amazon.com/images/I/81KoSSAwH2L._SL1500_.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <h6 style="color:#FF4C29">20000$</h6>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://m.media-amazon.com/images/I/81KoSSAwH2L._SL1500_.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <h6 style="color:#FF4C29">20000$</h6>
+              </div>
+          </div>
+      </div> -->
+  </div>
+</div>

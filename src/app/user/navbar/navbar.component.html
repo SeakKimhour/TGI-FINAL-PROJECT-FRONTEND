@@ -1,0 +1,51 @@
+<nav *ngIf="!isAdmin ;else adminpage " class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">
+      <h5 class="fw-bold text-white">COMPANY NAME</h5>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <form class="d-flex all-content" role="search">
+
+          <li class="nav-item mt-2 dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              All
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <input class="mt-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="button-search mt-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </ul>
+      <div class="d-flex nav-right">
+        <button *ngIf="isLogin ; else signout" class=" btn login-button mt-2" (click)="onClickSignin()">login</button>
+
+        <ng-template #signout>
+          <button class=" btn login-button mt-2" (click)="onSignOut()">signout</button>
+        </ng-template>
+        <i class="fa-solid fa-plus mx-3" routerLink="/add-product"></i>
+        <i class="fa-sharp fa-solid fa-heart mx-3" (click)="onClickFavorite()"></i>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<ng-template #adminpage>
+<app-admin-component></app-admin-component>
+</ng-template>
+
+<router-outlet></router-outlet>

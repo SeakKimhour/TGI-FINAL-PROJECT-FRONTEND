@@ -1,0 +1,57 @@
+
+<div class="body">
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+
+        <ngx-loading
+        [show]="loading"
+        [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
+
+        <div class="img-left d-none d-md-flex"></div>
+
+        <div class="card-body">
+          <h3 class="title text-center mt-4 fw-bold">
+            Login into account
+          </h3>
+
+          <form class="form-box px-3" (ngSubmit)="onClickSubmit()" [formGroup]="form">
+            <div class="form-input">
+              <span><i class="fa-solid fa-user"></i></span>
+              <input type="text" name="" formControlName="username" placeholder="Username" tabindex="10" required>
+              <small *ngIf="!form.get('username')?.valid && form.get('username')?.touched" class="text-danger">Username is Required</small>
+            </div>
+
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" name="" formControlName="password" placeholder="Password" required>
+              <small *ngIf="!form.get('password')?.valid && form.get('password')?.touched" class="text-danger">Password is Required</small>
+            </div>
+
+
+            <div class="mb-3">
+              <button type="submit" class="btn text-uppercase" [disabled]="form.status === 'INVALID'">
+                Login
+              </button>
+            </div>
+
+            <div class="text-right">
+              <a href="#" class="forget-link">
+                Forget Password?
+              </a>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              Don't have an account?
+              <a  routerLink="/signup" class="register-link">
+                Register here
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

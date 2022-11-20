@@ -1,0 +1,86 @@
+<!-- Top-sale -->
+<div class="container top-sale">
+  <h2 class="fw-bold">Top Sale</h2>
+  <!-- <div class="row g-2 mt-5">
+      <div class="col-lg-3 col-md-6 col-12">
+
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <h6 style="color:#FF4C29">20000$</h6>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <h6 style="color:#FF4C29">20000$</h6>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <h6 style="color:#FF4C29">20000$</h6>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <div class="topSale-products mt-5">
+    <owl-carousel-o [options]="customOptions1" >
+      <ng-template carouselSlide *ngFor="let p of listProduct">
+        <div class="card">
+          <img [src]="p.image_url" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h6 class="card-title">{{p.product_name}}</h6>
+              <h6 style="color:#FF4C29">{{p. product_price}} $</h6>
+          </div>
+      </div>
+      </ng-template>
+      <!-- <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <h6 style="color:#FF4C29">20000$</h6>
+          </div>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <h6 style="color:#FF4C29">20000$</h6>
+          </div>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <h6 style="color:#FF4C29">20000$</h6>
+          </div>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pink-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1645572315935" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <h6 style="color:#FF4C29">20000$</h6>
+          </div>
+      </div>
+      </ng-template> -->
+    </owl-carousel-o>
+  </div>
+</div>
+

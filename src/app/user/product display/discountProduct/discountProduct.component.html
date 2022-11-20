@@ -1,0 +1,148 @@
+ <!-- Product discount -->
+ <div class="container discount-product">
+  <h2 class="fw-bold">Discount Product</h2>
+  <!-- <div class="row g-2 mt-5">
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+              <div class="discount-percentage">
+                <h6 class="pt-2 text-white">10%</h6>
+              </div>
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <div class="d-flex">
+                      <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                      <h6 style="color:#FF4C29">15000$</h6>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+              <div class="discount-percentage">
+                <h6 class="pt-2 text-white">10%</h6>
+              </div>
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <div class="d-flex">
+                      <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                      <h6 style="color:#FF4C29">15000$</h6>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+              <div class="discount-percentage">
+                <h6 class="pt-2 text-white">10%</h6>
+              </div>
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <div class="d-flex">
+                      <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                      <h6 style="color:#FF4C29">15000$</h6>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+          <div class="card">
+              <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+              <div class="discount-percentage">
+                <h6 class="pt-2 text-white">10%</h6>
+              </div>
+              <div class="card-body">
+                  <h6 class="card-title">Product name</h6>
+                  <div class="d-flex">
+                      <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                      <h6 style="color:#FF4C29">15000$</h6>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+
+  <div class="discount-products mt-5">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let p of listProducts">
+        <div class="card">
+          <img [src]="p.image_url" class="card-img-top" alt="...">
+          <div class="discount-percentage">
+            <h6 class="pt-2 text-white">10%</h6>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title">{{p.product_name}}</h6>
+              <div class="d-flex">
+                  <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">{{p.product_price}}$</h6>
+                  <h6 style="color:#FF4C29">15000$</h6>
+              </div>
+          </div>
+        </div>
+      </ng-template>
+      <!-- <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+          <div class="discount-percentage">
+            <h6 class="pt-2 text-white">10%</h6>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <div class="d-flex">
+                  <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                  <h6 style="color:#FF4C29">15000$</h6>
+              </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+          <div class="discount-percentage">
+            <h6 class="pt-2 text-white">10%</h6>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <div class="d-flex">
+                  <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                  <h6 style="color:#FF4C29">15000$</h6>
+              </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+          <div class="discount-percentage">
+            <h6 class="pt-2 text-white">10%</h6>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <div class="d-flex">
+                  <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                  <h6 style="color:#FF4C29">15000$</h6>
+              </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="card">
+          <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" class="card-img-top" alt="...">
+          <div class="discount-percentage">
+            <h6 class="pt-2 text-white">10%</h6>
+          </div>
+          <div class="card-body">
+              <h6 class="card-title">Product name</h6>
+              <div class="d-flex">
+                  <h6 style="color:#FF4C29" class="text-decoration-line-through me-3">20000$</h6>
+                  <h6 style="color:#FF4C29">15000$</h6>
+              </div>
+          </div>
+        </div>
+      </ng-template> -->
+    </owl-carousel-o>
+  </div>
+
+</div>
+

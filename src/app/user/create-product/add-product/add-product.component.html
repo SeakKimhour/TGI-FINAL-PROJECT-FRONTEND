@@ -1,0 +1,109 @@
+<div class="container">
+  <div id="stepper1" class="bs-stepper">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test-l-1">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Select Category</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-2">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Fill the Form</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-3">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Confirm</span>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-4">
+        <button class="step-trigger">
+          <span class="bs-stepper-circle">4</span>
+          <span class="bs-stepper-label">Finish</span>
+        </button>
+      </div>
+    </div>
+    <div class="bs-stepper-content">
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div id="test-l-1" class="content">
+            <div class="form-group mt-3">
+              <label for="exampleInputEmail1">Select Category</label>
+              <select id="category" name="category" class="ms-5" formControlName="category">
+                <option value="" selected hidden>Choose Category: </option>
+                <option value="Electronic">Electronic</option>
+              </select>
+            </div>
+          <button (click)="onNext()" class="btn button-content">Next</button>
+        </div>
+        <div id="test-l-2" class="content">
+          <div class="form-group">
+
+            <label for="exampleInputPassword1">Title</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="title" placeholder="Title" />
+
+
+            <label for="exampleInputPassword1">Brand</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="brand" placeholder="Brand" />
+
+
+            <label for="exampleInputPassword1">Model</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="model" placeholder="Model" />
+
+
+            <label for="exampleInputPassword1">Storage</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="storage" placeholder="Storage" />
+
+
+            <label for="exampleInputPassword1">Price</label>
+            <input type="number" class="form-control" id="exampleInputPassword1"  formControlName="price" placeholder="Price" />
+
+
+            <label for="exampleInputPassword1">Condition</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="condition" placeholder="Condition" />
+
+
+            <label for="exampleInputPassword1">Contact number</label>
+            <input type="number" class="form-control" id="exampleInputPassword1"  formControlName="contact_number" placeholder="Contact number" />
+
+
+            <label for="exampleInputPassword1">Description</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="description" placeholder="Description" />
+
+
+            <label for="exampleInputPassword1">Photo</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="photo" placeholder="Photo" />
+          </div>
+          <button (click)="onNext()" class="btn button-content">Next</button>
+        </div>
+
+        <div id="test-l-3" class="content">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Username</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="username" placeholder="Username" />
+
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password" />
+
+          </div>
+
+          <button (click)="onNext()" class="btn button-content">Next</button>
+        </div>
+
+        <div id="test-l-4" class="content text-center">
+          <br>
+          <p class="text-white">Congratulations! Your item is up to sale.</p>
+          <button type="submit" (click)="onSubmit()" class=" btn button-content">Submit</button>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

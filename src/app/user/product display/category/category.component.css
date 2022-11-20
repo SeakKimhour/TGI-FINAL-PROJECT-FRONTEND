@@ -1,0 +1,11 @@
+/* Category */
+.category{
+  margin-top: 4rem;
+}
+.category-box{
+  background-color: #FF4C29;
+  height: 400px;
+}
+.category-box ul li{
+  list-style: none;
+}
