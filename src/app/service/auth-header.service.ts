@@ -10,9 +10,9 @@ export class authHeader{
     authheader(key:string):HttpHeaders{
         let user = this.localStore.getData(key);
         if (user && user.token) {
-          return new HttpHeaders({Authorization: 'Bearer ' + user.token , 'Content-Type' : 'application/json',}) ; 
+          return new HttpHeaders({Authorization: 'Bearer ' + user.token , 'Content-Type' : 'application/json'}) ;
         } else {
-          return  new HttpHeaders({'Content-Type' : 'application/json',}) ; 
+          return  new HttpHeaders({'Content-Type' : 'application/json'}) ;
         }
     }
 }

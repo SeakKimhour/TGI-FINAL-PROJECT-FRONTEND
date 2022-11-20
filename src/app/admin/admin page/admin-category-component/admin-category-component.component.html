@@ -4,7 +4,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <th>ID</th>
+
           <th>Category Name</th>
           <th>Created Date</th>
           <th width="250px">Action</th>
@@ -12,7 +12,6 @@
     </thead>
       <tbody>
         <tr *ngFor="let cate of listCategory">
-          <td>{{ cate.category_id }}</td>
           <td>{{ cate.category_name }}</td>
           <td>{{ cate.created_date }}</td>
           <td>

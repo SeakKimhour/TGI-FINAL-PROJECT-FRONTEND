@@ -17,7 +17,7 @@ export class AdminCategoryComponentComponent implements OnInit {
   }
   async deletePost(data: any) {
     await this._categoryService.deleteCategory(data).subscribe((res)=>{
-      console.log(res);
+     window.location.reload()
 
     })
   }
