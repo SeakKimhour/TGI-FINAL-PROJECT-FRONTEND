@@ -1,6 +1,7 @@
 import { Component, OnInit,  } from '@angular/core';
 import { FormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BrandService } from 'app/service/brand.service';
 import { ProductService } from 'app/service/product.service';
 import Stepper from 'bs-stepper';
 import { ToastrService } from 'ngx-toastr';
@@ -17,7 +18,8 @@ export class AddProductComponent implements OnInit {
   name = 'Angular';
   private stepper!: Stepper;
 
-  constructor(private _router: Router, _fb:FormBuilder, private _toastr : ToastrService, private _productService: ProductService) {
+  constructor(private _router: Router, _fb:FormBuilder, private _toastr : ToastrService, private _productService: ProductService
+    , private _brandService: BrandService) {
     this.form = _fb.group({
       category : new FormControl('', Validators.required),
       title : new FormControl('', Validators.required),
@@ -37,7 +39,6 @@ export class AddProductComponent implements OnInit {
   onNext() {
     this.stepper.next();
     return false
-
   }
 
 
@@ -45,7 +46,8 @@ export class AddProductComponent implements OnInit {
   onSubmit() {
     let addProduct = {
       product_name: this.form.value.title,
-      product_brand_id: "8c119cf4-9a71-4cdb-9a67-b4213857c84c",
+      // product_brand_id: "8c119cf4-9a71-4cdb-9a67-b4213857c84c",
+      product_brand_id: this.form.value.brand,
       product_storage: this.form.value.storage,
       product_price: this.form.value.price,
       product_condition: this.form.value.condition,
@@ -57,17 +59,17 @@ export class AddProductComponent implements OnInit {
     this._productService.createProduct(addProduct);
     console.log(addProduct);
     this._toastr.success('Product Added Successfully','')
-  }
-
-  onClickNavigate(){
     this._router.navigate(['/home'])
-    return false
   }
 
-  ngOnInit() {
+  listBrands : any = []
+
+  async ngOnInit() {
     this.stepper = new Stepper(document.querySelector('#stepper1')!, {
       linear: false,
       animation: true
-    })
+    }),
+    this.listBrands = await this._brandService.getAllBrand()
+    console.log(this.listBrands)
   }
 }
