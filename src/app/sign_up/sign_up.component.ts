@@ -16,29 +16,36 @@ import { ToastrService } from 'ngx-toastr';
 export class Sign_upComponent implements OnInit {
   public loading = false;
   form: FormGroup;
-  constructor(private _router : Router, private _fb:FormBuilder,private _authService : AuthService,private localStore: LocalService, private _toastr : ToastrService) {
+  constructor(private _router: Router, private _fb: FormBuilder, private _authService: AuthService, private localStore: LocalService, private _toastr: ToastrService) {
 
     this.form = _fb.group({
-      username : new FormControl('', Validators.required),
-      email : new FormControl('',Validators.required),
-      password : new FormControl('', Validators.required)
+      username: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
     })
   }
 
   ngOnInit() {
   }
 
- 
-   
-  onClickSubmit(){
 
-    this._authService.signup(new SignupModel(this.form.value.username, this.form.value.email,this.form.value.password)).toPromise().then(async (res : any) => {
+
+  onClickSubmit() {
+
+    this._authService.signup(new SignupModel(this.form.value.username, this.form.value.email, this.form.value.password)).toPromise().then(async (res: any) => {
       this.loading = false;
-       this.localStore.saveData('token', res.token);
-        this._router.navigate(['/home'])
-        this._toastr.success('SignUp Successfully','')
-  })
+      this.localStore.saveData('token', res.token);
+      this.localStore.saveData('user', res.roles[0]);
+      if (res.roles[0] === "ROLE_USER") {
+        this._router.navigate(['/user'])
 
-}
+      } else if (res.roles[0] === "ROLE_ADMIN") {
+        this._router.navigate(['/admin'])
+
+      }
+      this._toastr.success('Login Successfully', '')
+    })
+
+  }
 }
 

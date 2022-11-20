@@ -9,34 +9,30 @@ import { LocalService } from 'app/service/local-storage.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isLogin=false
- isAdmin=false
-  constructor(private _router : Router,private local: LocalService) { }
+
+  isAdmin = false
+  constructor(private _router: Router, private local: LocalService) { }
 
 
   ngOnInit() {
-    if(this.local.getData("token").token!==""){
-     this.isLogin=false
-    }else{
-      this.isLogin=true
+
+    if (this.local.getUserRole("user").role === "ROLE_ADMIN") {
+      this.isAdmin = true
+    } else {
+      this.isAdmin = false
     }
-    if(this.local.getUserRole("user").role==="ROLE_ADMIN"){
-      this.isAdmin=true
-     }else{
-       this.isAdmin=false
-     }
 
   }
-  onSignOut(){
+  onSignOut() {
     this.local.clearData()
     window.location.reload()
   }
-  onClickSignin(){
+  onClickSignin() {
     this._router.navigate(['/signin'])
   }
 
-  onClickFavorite(){
-    this._router.navigate(['favorite'])
+  onClickFavorite() {
+    this._router.navigate(['user/favorite'])
   }
 
 

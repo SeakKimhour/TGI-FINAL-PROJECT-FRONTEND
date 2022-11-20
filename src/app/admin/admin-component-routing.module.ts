@@ -1,11 +1,41 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminBrandComponentComponent } from './admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
+import { AdminCategoryComponentComponent } from './admin page/admin-category-component/admin-category-component.component';
+import { AdminSubCategoryComponentComponent } from './admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
+import { AdminComponentComponent } from './admin-component.component';
 
-const routes: Routes = [
+export const Adminroutes: Routes = [
+  {
+    path: "",
+    component: AdminComponentComponent,
+    children: [{
+      path: '',
+      redirectTo: 'category',
+      pathMatch: 'full'
+    },
+    {
+      path: 'category',
+      component: AdminCategoryComponentComponent,
+
+    },
+    {
+      path: 'sub-category',
+      component: AdminSubCategoryComponentComponent,
+
+    }, {
+      path: 'brand',
+      component: AdminBrandComponentComponent,
+
+    },]
+  }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(Adminroutes)],
   exports: [RouterModule]
 })
-export class AdminComponentRoutingModule { }
+export class AdminComponentRoutingModule {
+  static component = [AdminComponentComponent]
+}

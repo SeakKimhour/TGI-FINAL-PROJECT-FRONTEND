@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
+import { UserComponentRoutingModule } from "./user-component-routing.module";
 
 @NgModule({
   declarations: [
+    ...UserComponentRoutingModule.components
   ],
   imports: [
-
-  ],
-  exports:[],
-  providers: [],
+    UserComponentRoutingModule
+  ]
 })
 export class UserComponentModule { }

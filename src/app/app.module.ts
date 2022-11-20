@@ -31,39 +31,32 @@ import { NgxLoadingModule } from "ngx-loading";
 
 import { ToastrModule } from 'ngx-toastr';
 import { LoginRouteGuardGuard } from './service/guard/login/login-route-guard.guard';
-import { AdminComponentComponent } from './admin/admin-component.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
 import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
 import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
 import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
 import { TopSaleComponent } from './user/product display/topSale/topSale.component';
 import { AllStepComponent } from './user/create-product/allStep/allStep.component';
-import { NavbarComponent } from './user/navbar/navbar.component';
+
 import { DiscountProductComponent } from './user/product display/discountProduct/discountProduct.component';
 import { AddProductComponent } from './user/create-product/add-product/add-product.component';
-import { UserComponentComponent } from './user/user-component.component';
+
 
 
 
 const appRoutes : Routes = [
   {path: '', component: Sign_inComponent},
   {path: 'signin', component: Sign_inComponent,},
-  {path: 'user', component: UserComponentComponent,},
-  {path: 'home', component: ProductDisplayComponent,canActivate:[LoginRouteGuardGuard]},
   {path: 'signup', component: Sign_upComponent,},
   {path: 'profile', component: ProfileComponent,canActivate:[LoginRouteGuardGuard]},
-  {path: 'favorite', component: FavoriteProductComponent,canActivate:[LoginRouteGuardGuard]},
   {path: 'step', component: AllStepComponent,canActivate:[LoginRouteGuardGuard]},
-  {path: 'add-product', component: AddProductComponent,canActivate:[LoginRouteGuardGuard]},
-  {path: 'admin/category', component: AdminCategoryComponentComponent},
-  {path: 'admin/sub-category', component: AdminSubCategoryComponentComponent},
-  {path: 'admin/brand', component: AdminBrandComponentComponent},
+  {path: 'admin',   loadChildren: () => import('./admin/admin-component.module').then(m => m.AdminComponentModule),},
 
 
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user-component.module').then(m => m.UserComponentModule),
+
+  },
 
 
 ]
@@ -72,7 +65,6 @@ const appRoutes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     ProductDisplayComponent,
     Sign_inComponent,
     FeatureProductComponent,
@@ -84,19 +76,9 @@ const appRoutes : Routes = [
     FavoriteProductComponent,
     AddProductComponent,
     Sign_upComponent,
-    AdminComponentComponent,
-    AdminCategoryComponentComponent,
-    AdminSubCategoryComponentComponent,
-    AdminBrandComponentComponent,
-    UserComponentComponent
-
   ],
   imports: [
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
+
     BrowserModule,
     AppRoutingModule,
     CommonModule,

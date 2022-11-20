@@ -1,12 +1,21 @@
 import { NgModule } from "@angular/core";
-
+import { AdminComponentRoutingModule } from "./admin-component-routing.module";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [
+    ...AdminComponentRoutingModule.component
   ],
   imports: [
-
+    AdminComponentRoutingModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
   ],
-  exports:[],
-  providers: [],
 })
 export class AdminComponentModule { }

@@ -36,18 +36,17 @@ export class Sign_inComponent implements OnInit {
     this.loading = true;
     await this._authService.signin(new SigninModel(this.form.value.username, this.form.value.password)).toPromise().then((res: any) => {
       this.localStore.saveData('token', res.token);
-      this.loading = false;
-      this._router.navigate(['/home',{skipLocationChange:false}]).then(()=>{
-        this._router.navigate(['/refreshNav']).then(()=>{
-          this._router.navigate(['/home'])
-        })
-      })
       this.localStore.saveData('user', res.roles[0]);
       this.loading = false;
-      this._router.navigate(['/home'])
+      if(res.roles[0]==="ROLE_USER"){
+        this._router.navigate(['/user'])
 
+      }else if(res.roles[0]==="ROLE_ADMIN"){
+        this._router.navigate(['/admin'])
 
+      }
       this._toastr.success('Login Successfully','')
+
     })
 
   }
