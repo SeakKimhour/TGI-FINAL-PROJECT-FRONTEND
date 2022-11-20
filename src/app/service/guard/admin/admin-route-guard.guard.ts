@@ -13,7 +13,11 @@ export class AdminRouteGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    return true;
-  }
+   if (  this._LocalService.getData("user").token==="ROLE_ADMIN"){
+    return true
+   }else{
+    return false;
+   }
 
+  }
 }

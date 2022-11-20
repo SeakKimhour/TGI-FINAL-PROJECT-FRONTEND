@@ -18,50 +18,32 @@ import { FeatureProductComponent } from './user/product display/featureProduct/f
 
 import { CategoryComponent } from './user/product display/category/category.component';
 import { NewProductComponent } from './user/product display/newProduct/newProduct.component';
-
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './user/profile/profile.component';
 import { FavoriteProductComponent } from './user/favoriteProduct/favoriteProduct.component';
 import { Sign_upComponent } from './sign_up/sign_up.component';
-
 import { LocalService } from './service/local-storage.service';
 import { authHeader } from './service/auth-header.service';
 import { NgxLoadingModule } from "ngx-loading";
-
 import { ToastrModule } from 'ngx-toastr';
 import { LoginRouteGuardGuard } from './service/guard/login/login-route-guard.guard';
-import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
-import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
-import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
 import { TopSaleComponent } from './user/product display/topSale/topSale.component';
-import { AllStepComponent } from './user/create-product/allStep/allStep.component';
-
 import { DiscountProductComponent } from './user/product display/discountProduct/discountProduct.component';
 import { AddProductComponent } from './user/create-product/add-product/add-product.component';
-
-
-
-
+import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.guard';
 const appRoutes : Routes = [
   {path: '', component: Sign_inComponent},
   {path: 'signin', component: Sign_inComponent,},
   {path: 'signup', component: Sign_upComponent,},
   {path: 'profile', component: ProfileComponent,canActivate:[LoginRouteGuardGuard]},
-  {path: 'step', component: AllStepComponent,canActivate:[LoginRouteGuardGuard]},
-  {path: 'admin',   loadChildren: () => import('./admin/admin-component.module').then(m => m.AdminComponentModule),},
-
-
+  {path: 'admin',   loadChildren: () => import('./admin/admin-component.module').then(m => m.AdminComponentModule),canActivate:[AdminRouteGuardGuard]},
   {
     path: 'user',
     loadChildren: () => import('./user/user-component.module').then(m => m.UserComponentModule),
 
   },
-
-
 ]
-
-
 @NgModule({
   declarations: [
     AppComponent,
