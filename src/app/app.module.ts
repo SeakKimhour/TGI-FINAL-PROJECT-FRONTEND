@@ -11,7 +11,7 @@ import { Sign_inComponent } from './sign_in/sign_in.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-gard.service';
 import { FeatureProductComponent } from './user/product display/featureProduct/featureProduct.component';
@@ -34,12 +34,15 @@ import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.gu
 import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
 import { SubcategoryService } from './service/subcategory.service';
 
-const appRoutes : Routes = [
-  {path: '', component: Sign_inComponent},
-  {path: 'signin', component: Sign_inComponent,},
-  {path: 'signup', component: Sign_upComponent,},
-  {path: 'profile', component: ProfileComponent,canActivate:[LoginRouteGuardGuard]},
-  {path: 'admin',   loadChildren: () => import('./admin/admin-component.module').then(m => m.AdminComponentModule),canActivate:[AdminRouteGuardGuard]},
+import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
+import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
+
+const appRoutes: Routes = [
+  { path: '', component: Sign_inComponent },
+  { path: 'signin', component: Sign_inComponent, },
+  { path: 'signup', component: Sign_upComponent, },
+  { path: 'profile', component: ProfileComponent, canActivate: [LoginRouteGuardGuard] },
+  { path: 'admin', loadChildren: () => import('./admin/admin-component.module').then(m => m.AdminComponentModule), canActivate: [AdminRouteGuardGuard] },
   {
     path: 'user',
     loadChildren: () => import('./user/user-component.module').then(m => m.UserComponentModule),
@@ -60,7 +63,9 @@ const appRoutes : Routes = [
     FavoriteProductComponent,
     AddProductComponent,
     Sign_upComponent,
-    AdminCategoryComponentComponent
+    AdminCategoryComponentComponent, AdminSubCategoryComponentComponent
+    ,
+    AdminBrandComponentComponent
   ],
   imports: [
 
@@ -75,11 +80,11 @@ const appRoutes : Routes = [
     CarouselModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut : 1000,
-      progressBar : true,
-      progressAnimation : 'increasing',
-      preventDuplicates : true
-  }),
+      timeOut: 1000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    }),
   ],
   providers: [ProductService, BrandService, CategoryService, AuthService, AuthGuardService,LocalService,authHeader, SubcategoryService],
   bootstrap: [AppComponent]
