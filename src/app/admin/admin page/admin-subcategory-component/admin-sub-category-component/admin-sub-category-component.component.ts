@@ -17,7 +17,7 @@ export class AdminSubCategoryComponentComponent implements OnInit {
     })
   }
   async deletePost(data: any) {
-    await this._subcategoryService.deleteCategory(data).subscribe((res)=>{
+    await this._subcategoryService.deleteSubcategory(data).subscribe((res)=>{
       console.log(res);
 
     })

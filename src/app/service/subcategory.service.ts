@@ -16,7 +16,7 @@ export class SubcategoryService{
     }
      return this.http.get('https://tgi.final.kunapheap.com/subcategory',httpOptions)
   }
-  deleteCategory(id:any){
+  deleteSubcategory(id:any){
     let httpOptions = {
       headers :this.httpHeader.authheader('token'),
       body:null,
