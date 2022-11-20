@@ -5,6 +5,7 @@ import { AddProductComponent } from './create-product/add-product/add-product.co
 import { FavoriteProductComponent } from './favoriteProduct/favoriteProduct.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDisplayComponent } from './product display/product-display.component';
+import { ProductDetailComponent } from './product display/productDetail/productDetail.component';
 import { UserComponentComponent } from './user-component.component';
 
 export const Userroutes: Routes = [
@@ -31,6 +32,11 @@ export const Userroutes: Routes = [
         path: 'add-product',
         canActivate:[LoginRouteGuardGuard],
         component: AddProductComponent
+      },
+      {
+        path: 'detail',
+        canActivate:[LoginRouteGuardGuard],
+        component: ProductDetailComponent
       },
     ]
 

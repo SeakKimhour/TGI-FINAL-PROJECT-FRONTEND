@@ -32,6 +32,7 @@ import { TopSaleComponent } from './user/product display/topSale/topSale.compone
 import { DiscountProductComponent } from './user/product display/discountProduct/discountProduct.component';
 import { AddProductComponent } from './user/create-product/add-product/add-product.component';
 import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.guard';
+
 const appRoutes : Routes = [
   {path: '', component: Sign_inComponent},
   {path: 'signin', component: Sign_inComponent,},
