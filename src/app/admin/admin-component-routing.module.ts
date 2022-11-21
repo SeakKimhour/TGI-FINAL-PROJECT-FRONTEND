@@ -5,6 +5,7 @@ import { AdminCategoryComponentComponent } from './admin page/admin-category-com
 import { CreateCategoryComponent } from './admin page/admin-category-component/create-category/create-category.component';
 import { EditCategoryComponent } from './admin page/admin-category-component/edit-category/edit-category.component';
 import { AdminSubCategoryComponentComponent } from './admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
+import { BrandReactiveFormComponent } from './admin page/brand-reactive-form/brand-reactive-form.component';
 import { AdminComponentComponent } from './admin-component.component';
 
 export const Adminroutes: Routes = [
@@ -32,11 +33,18 @@ export const Adminroutes: Routes = [
       path: 'sub-category',
       component: AdminSubCategoryComponentComponent,
 
-    }, {
+    },
+    {
       path: 'brand',
       component: AdminBrandComponentComponent,
 
-    },]
+    },
+    {
+      path: 'brand-form',
+      component: BrandReactiveFormComponent,
+
+    },
+  ]
   }
 
 ];

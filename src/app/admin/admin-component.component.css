@@ -1,18 +1,18 @@
 mat-toolbar {
-  background: #004a9f;
+  background-color: #082032;
   color: white;
 }
 mat-toolbar >button{
-  background: #004a9f;
-  color: white;
+  background: #FF4C29;
+  color:  #FF4C29;
 }
 
 mat-sidenav {
   margin: 16px !important;
   width: 200px !important;
   border-right: none;
-  background: #002b5c !important;
-  color: white;
+  background-color: #082032;
+  color:  #FF4C29;
   border-radius: 10px;
   padding: 16px;
   text-align: center;
@@ -34,8 +34,9 @@ mat-sidenav-container {
 }
 
 .menu-button {
+  margin-bottom: 20px;
   color: white;
-  background-color: #002b5c;
+  background-color: #FF4C29;
   width: 100%;
   display: flex;
   align-items: center;

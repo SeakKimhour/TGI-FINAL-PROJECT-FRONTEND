@@ -10,9 +10,8 @@ import { CategoryService } from 'app/service/category.service';
 export class AdminCategoryComponentComponent implements OnInit {
 
 
+
   constructor(private _categoryService: CategoryService,    private router: Router) { }
-
-
 
   listCategory: any = []
   async ngOnInit(): Promise<void> {

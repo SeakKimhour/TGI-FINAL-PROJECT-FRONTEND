@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BrandModel } from "app/model/brand.model";
+import { Observable } from "rxjs";
 import { authHeader } from "./auth-header.service";
 
 @Injectable()
@@ -20,8 +21,19 @@ export class BrandService{
       this.brands = []
       res.forEach((r: any) => {
         this.brands.push(r)
+        console.log(r);
+
       })
     })
+    console.log(this.brands);
     return this.brands
+  }
+
+  postData(data: any): Observable<any> {
+    return this.http.post('https://tgi.final.kunapheap.com/brand', data)
+  }
+
+  deleteData(brand_id: string): Observable<any> {
+    return this.http.delete('https://tgi.final.kunapheap.com/brand/' + brand_id)
   }
 }
