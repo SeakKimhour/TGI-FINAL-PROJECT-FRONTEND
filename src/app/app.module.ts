@@ -32,6 +32,8 @@ import { DiscountProductComponent } from './user/product display/discountProduct
 import { AddProductComponent } from './user/create-product/add-product/add-product.component';
 import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.guard';
 import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
+import { SubcategoryService } from './service/subcategory.service';
+
 import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
 import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
 
@@ -84,7 +86,7 @@ const appRoutes: Routes = [
       preventDuplicates: true
     }),
   ],
-  providers: [ProductService, BrandService, CategoryService, AuthService, AuthGuardService, LocalService, authHeader],
+  providers: [ProductService, BrandService, CategoryService, AuthService, AuthGuardService,LocalService,authHeader, SubcategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

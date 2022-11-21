@@ -9,6 +9,7 @@ import { CategoryService } from 'app/service/category.service';
 export class AdminCategoryComponentComponent implements OnInit {
 
   constructor(private _categoryService: CategoryService) { }
+
   listCategory: any = []
   async ngOnInit(): Promise<void> {
     await this._categoryService.getAllCategory().subscribe((res) => {
