@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SubcategoryService } from 'app/service/subcategory.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SubcategoryService } from 'app/service/subcategory.service';
 })
 export class AdminSubCategoryComponentComponent implements OnInit {
 
-  constructor(private _subcategoryService: SubcategoryService, ) { }
+  constructor(private _subcategoryService: SubcategoryService, private router: Router) { }
 
   listSubCategory: any = []
   async ngOnInit(): Promise<void> {
@@ -17,11 +18,17 @@ export class AdminSubCategoryComponentComponent implements OnInit {
     })
   }
   async deletePost(data: any) {
-    await this._subcategoryService.deleteSubcategory(data).subscribe((res)=>{
+    await this._subcategoryService.deleteSubcategory(data).subscribe((res) => {
+      window.location.reload()
       console.log(res);
 
     })
   }
+
+  onClickEdit(id: any) {
+    this.router.navigate(["/admin/sub-category/edit/" + id])
+  }
+
 
 
 

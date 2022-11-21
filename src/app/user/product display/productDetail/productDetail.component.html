@@ -7,22 +7,22 @@
         </div>
       </div>
       <div class="col-lg-9">
-        <h4 class="fw-bold mt-2">IPhone</h4>
+        <h4 class="fw-bold mt-2">Name : {{productItem.product_name}}</h4>
         <hr>
-        <h4 class="fw-bold">$139.99</h4>
-        <h5 class="fw-bold mt-3">Product Details</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis nobis repudiandae, pariatur facilis culpa praesentium aut quaerat possimus nisi, cupiditate cumque animi ratione qui hic magni aperiam nam sed quidem.</p>
+        <h4 class="fw-bold">Price : {{productItem.product_name}}</h4>
+        <h5 class="fw-bold mt-3">Product Details : </h5>
+        <p>{{productItem.product_description}}</p>
         <div class="d-flex">
           <i class="fa-solid fa-circle-check mt-1"></i>
-          <p class="ms-3">Brand : Apple</p>
+          <p class="ms-3">Brand : {{productItem.brand.brand_name}}</p>
         </div>
         <div class="d-flex">
           <i class="fa-solid fa-circle-check mt-1"></i>
-          <p class="ms-3">Product condition : Second hand</p>
+          <p class="ms-3">Product condition : {{productItem.product_condition}}</p>
         </div>
         <div class="d-flex">
           <i class="fa-solid fa-circle-check mt-1"></i>
-          <p class="ms-3">Contact number : 078220698</p>
+          <p class="ms-3">Contact number : {{productItem.contact_number}}</p>
         </div>
       </div>
     </div>

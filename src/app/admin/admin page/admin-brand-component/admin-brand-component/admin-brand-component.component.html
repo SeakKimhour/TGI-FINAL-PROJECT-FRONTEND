@@ -1,20 +1,26 @@
 <div class="container">
-  <button class="btn btn-success" (click)="onClickAdd()">Create New Brand</button>
-  <table class="table mt-5">
+  <a href="#" routerLink="create/" class="btn btn-success">Create New Brand</a>
+
+  <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Brand Name</th>
-        <th scope="col">Action</th>
+
+        <th>Brand Name</th>
+        <th>Brand Created Date</th>
+        <th>Sub Category Name</th>
+
+
+        <th width="250px">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let l of listBrand">
-        <th scope="row">{{l.brand_id}}</th>
-        <td>{{l.brand_name}}</td>
-        <td class="d-flex">
-          <button class="btn btn-primary">Edit</button>
-          <button class="btn btn-danger ms-2">Delete</button>
+      <tr *ngFor="let brand of listBrand">
+        <td>{{ brand.brand_name }}</td>
+        <td>{{ brand.created_date }}</td>
+        <td>{{ brand.sub_Category.sub_category_name }}</td>
+        <td>
+          <a (click)="onClickEdit(brand.brand_id)" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deletePost(brand.brand_id)" class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </tbody>

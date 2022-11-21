@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onClickFavorite() {
-    this._router.navigate(['user/favorite'])
+    this._router.navigate(['user/profile'])
   }
 
 

@@ -11,7 +11,10 @@ export class LocalService {
   public saveData(key: string, value: string) {
     localStorage.setItem(key, this.encrypt(value));
   }
-
+  public getUsername(key:string){
+    let data = localStorage.getItem(key)|| "";
+    return {username:this.decrypt(data)};
+  }
   public getData(key: string) {
     let data = localStorage.getItem(key)|| "";
     return {token:this.decrypt(data)};

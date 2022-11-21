@@ -38,6 +38,10 @@ import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-com
 import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
 import { CreateCategoryComponent } from './admin/admin page/admin-category-component/create-category/create-category.component';
 import { EditCategoryComponent } from './admin/admin page/admin-category-component/edit-category/edit-category.component';
+import { CreateBrandComponent } from './admin/admin page/admin-brand-component/admin-brand-component/create-brand/create-brand.component';
+import { EditBrandComponent } from './admin/admin page/admin-brand-component/admin-brand-component/edit-brand/edit-brand.component';
+import { CreateSubCategoryComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/create-sub-category/create-sub-category.component';
+import { EditSubCategoryComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/edit-sub-category/edit-sub-category.component';
 
 const appRoutes: Routes = [
   { path: '', component: Sign_inComponent },
@@ -67,10 +71,13 @@ const appRoutes: Routes = [
     AddProductComponent,
     Sign_upComponent,
     AdminCategoryComponentComponent,
-    AdminSubCategoryComponentComponent
-    ,
+    AdminSubCategoryComponentComponent,
     AdminBrandComponentComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    EditSubCategoryComponent,
+    CreateSubCategoryComponent,
+    CreateBrandComponent,
+    EditBrandComponent,
   ],
   imports: [
 

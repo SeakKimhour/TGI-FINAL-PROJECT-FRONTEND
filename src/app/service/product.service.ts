@@ -36,4 +36,11 @@ export class ProductService {
         this._router.navigate(['/home'])
       })
   }
+  findProductById(id:any){
+    let httpOptions = {
+      headers: this._authHeader.authheader('token'),
+    }
+   return  this.http.get('https://tgi.final.kunapheap.com/product/getById?id='+id, httpOptions)
+
+  }
 }

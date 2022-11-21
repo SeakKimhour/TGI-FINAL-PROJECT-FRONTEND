@@ -46,7 +46,7 @@ export class CategoryService{
       param : null,
 
     }
-    return this.http.post("https://tgi.final.kunapheap.com:8080/category/update?id="+id,data,httpOptions)
+    return this.http.post("https://tgi.final.kunapheap.com/category/update?id="+id,data,httpOptions)
   }
 
 

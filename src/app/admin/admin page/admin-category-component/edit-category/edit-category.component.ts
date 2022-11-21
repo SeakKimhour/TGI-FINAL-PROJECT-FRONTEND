@@ -18,14 +18,14 @@ export class EditCategoryComponent {
     private router: Router
   ) { }
   async ngOnInit() {
-    this.id = this.route.snapshot.params['categoryid'];
+    this.id = this.route.snapshot.params['id'];
     await this._categoryService.findByCategoryId(this.id).subscribe((res) => {
       this.data = res
     })
 
 
     this.form = new FormGroup({
-      category: new FormControl( "", [Validators.required]),
+      category: new FormControl("", [Validators.required]),
 
     });
   }

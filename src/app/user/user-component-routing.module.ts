@@ -6,6 +6,7 @@ import { FavoriteProductComponent } from './favoriteProduct/favoriteProduct.comp
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDisplayComponent } from './product display/product-display.component';
 import { ProductDetailComponent } from './product display/productDetail/productDetail.component';
+import { ProfileComponent } from './profile/profile.component';
 import { UserComponentComponent } from './user-component.component';
 
 export const Userroutes: Routes = [
@@ -21,32 +22,28 @@ export const Userroutes: Routes = [
       {
         path: 'home',
         component: ProductDisplayComponent,
-        canActivate:[LoginRouteGuardGuard]
+        canActivate: [LoginRouteGuardGuard]
       },
       {
-        path: 'favorite',
-        canActivate:[LoginRouteGuardGuard],
-        component: FavoriteProductComponent
+        path: 'profile',
+        canActivate: [LoginRouteGuardGuard],
+        component: ProfileComponent
       },
       {
         path: 'add-product',
-        canActivate:[LoginRouteGuardGuard],
+        canActivate: [LoginRouteGuardGuard],
         component: AddProductComponent
       },
-      {
-        path: 'detail',
-        canActivate:[LoginRouteGuardGuard],
-        component: ProductDetailComponent
-      },
-    ]
 
-  }
+    ],
+  },
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(Userroutes) ],
+  imports: [RouterModule.forChild(Userroutes)],
   exports: [RouterModule]
 })
 export class UserComponentRoutingModule {
-  static components = [UserComponentComponent,NavbarComponent];
- }
+  static components = [UserComponentComponent, NavbarComponent];
+}

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   declarations: [
     ...AdminComponentRoutingModule.component,
 
+
   ],
   imports: [
 

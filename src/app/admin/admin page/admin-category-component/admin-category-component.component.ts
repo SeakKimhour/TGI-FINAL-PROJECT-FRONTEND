@@ -22,11 +22,10 @@ export class AdminCategoryComponentComponent implements OnInit {
   async deletePost(data: any) {
     await this._categoryService.deleteCategory(data).subscribe((res)=>{
      window.location.reload()
-
     })
   }
   onClickEdit(id:any){
-    this.router.navigate(["admin/category/edit/"+id])
+    this.router.navigate(["/admin/sub-category/edit/"+id])
   }
 
 }

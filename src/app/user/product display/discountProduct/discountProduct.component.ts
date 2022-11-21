@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'app/service/product.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-discountProduct',
@@ -9,9 +10,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class DiscountProductComponent implements OnInit {
 
-  constructor(private _productService : ProductService) { }
+  constructor(private _productService: ProductService, private route: Router) { }
 
-  listProducts :any = []
+  listProducts: any = []
 
   async ngOnInit() {
     this.listProducts = await this._productService.getAllProduct()
@@ -41,5 +42,6 @@ export class DiscountProductComponent implements OnInit {
     },
     nav: true
   }
+
 
 }

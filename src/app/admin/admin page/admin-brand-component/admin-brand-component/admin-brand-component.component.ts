@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BrandService } from 'app/service/brand.service';
+import { CategoryService } from 'app/service/category.service';
 
 @Component({
   selector: 'app-admin-brand-component',
@@ -8,23 +10,21 @@ import { BrandService } from 'app/service/brand.service';
 })
 export class AdminBrandComponentComponent implements OnInit {
 
-  listBrand : any = []
+  constructor(private _brandService: BrandService,    private router: Router) { }
 
-  constructor(private _brandService : BrandService) { }
-
-  async ngOnInit(){
-    this.listBrand = await this._brandService.getAllBrand()
-    //console.log(this.listBrand);
+  listBrand: any = []
+  async ngOnInit(): Promise<void> {
+    await this._brandService.getAllBrand().subscribe((res) => {
+      this.listBrand = res
+    })
   }
-  onClickAdd(){
-
+  async deletePost(data: string) {
+    await this._brandService.deleteBrand(data).subscribe((res)=>{
+     window.location.reload()
+    })
   }
-
-  // onClickDelete(branding: any) {
-  //   if(confirm("Are you sure to delete your girlfriend?"))
-  //   this._brandService.deleteData(branding).subscribe(data => {
-  //     window.location.reload();
-  //   })
-  // }
+  onClickEdit(id:any){
+    this.router.navigate(["/admin/brand/edit/"+id])
+  }
 
 }

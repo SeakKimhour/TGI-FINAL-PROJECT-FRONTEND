@@ -36,6 +36,7 @@ export class Sign_upComponent implements OnInit {
       this.loading = false;
       this.localStore.saveData('token', res.token);
       this.localStore.saveData('user', res.roles[0]);
+      this.localStore.saveData("username",res.username)
       if (res.roles[0] === "ROLE_USER") {
         this._router.navigate(['/user'])
 

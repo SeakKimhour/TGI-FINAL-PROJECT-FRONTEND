@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Create New Sub Category</h1>
+
+  <a href="#" routerLink="/admin/sub-category" class="btn btn-primary">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="mt-3 d-flex justify-content-center flex-column">
+
+    <div class="form-group">
+      <label for="sub_category_name">Sub Category Name:</label>
+      <input formControlName="sub_category_name" id="sub_category_name" type="text" class="form-control">
+
+
+      <div *ngIf="f['sub_category_name'].touched && f['sub_category_name'].invalid" class="alert alert-danger">
+        <div *ngIf="f['sub_category_name'].errors && f['sub_category_name'].errors['required']">Title is required.</div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary mt-3" style="width: 100px;" type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
+
+  </form>
+</div>
+
