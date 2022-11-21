@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoryService } from 'app/service/category.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CategoryService } from 'app/service/category.service';
 })
 export class AdminCategoryComponentComponent implements OnInit {
 
-  constructor(private _categoryService: CategoryService) { }
+  constructor(private _categoryService: CategoryService,    private router: Router) { }
   listCategory: any = []
   async ngOnInit(): Promise<void> {
     await this._categoryService.getAllCategory().subscribe((res) => {
@@ -20,6 +21,9 @@ export class AdminCategoryComponentComponent implements OnInit {
      window.location.reload()
 
     })
+  }
+  onClickEdit(id:any){
+    this.router.navigate(["admin'category/edit/"+id])
   }
 
 }

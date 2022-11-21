@@ -1,5 +1,5 @@
 <div class="container">
-  <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a>
+  <a href="#" routerLink="create/" class="btn btn-success">Create New Post</a>
 
   <table class="table table-striped">
     <thead>
@@ -15,7 +15,7 @@
           <td>{{ cate.category_name }}</td>
           <td>{{ cate.created_date }}</td>
           <td>
-            <a href="#" [routerLink]="['/post/', cate.category_id, 'edit']" class="btn btn-primary">Edit</a>
+            <a (click)="onClickEdit(cate.category_id)" class="btn btn-primary">Edit</a>
             <button type="button" (click)="deletePost(cate.category_id)" class="btn btn-danger">Delete</button>
           </td>
         </tr>
