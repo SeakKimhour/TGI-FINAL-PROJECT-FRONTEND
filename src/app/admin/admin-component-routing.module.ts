@@ -25,7 +25,7 @@ export const Adminroutes: Routes = [
       component: CreateCategoryComponent,
     },
     {
-      path: 'category/edit:categoryid',
+      path: 'category/edit:id',
       component: EditCategoryComponent,
     },
     {

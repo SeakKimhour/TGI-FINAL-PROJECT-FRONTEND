@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubcategoryService } from 'app/service/subcategory.service';
 
 @Component({
   selector: 'app-admin-sub-category-component',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSubCategoryComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _subcategoryService: SubcategoryService, ) { }
 
-  ngOnInit(): void {
+  listSubCategory: any = []
+  async ngOnInit(): Promise<void> {
+    await this._subcategoryService.getAllSubcategory().subscribe((res) => {
+      this.listSubCategory = res
+    })
   }
+  async deletePost(data: any) {
+    await this._subcategoryService.deleteSubcategory(data).subscribe((res)=>{
+      console.log(res);
+
+    })
+  }
+
+
 
 }
