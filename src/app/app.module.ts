@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrandService } from './service/brand.service';
 import { CategoryService } from './service/category.service';
 import { ProductService } from './service/product.service';
-
 import { ProductDisplayComponent } from './user/product display/product-display.component';
 import { Sign_inComponent } from './sign_in/sign_in.component';
 import { CommonModule } from '@angular/common';
@@ -33,31 +32,32 @@ import { AddProductComponent } from './user/create-product/add-product/add-produ
 import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.guard';
 import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
 import { SubcategoryService } from './service/subcategory.service';
-
 import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
 import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
-import { CreateCategoryComponent } from './admin/admin page/admin-category-component/create-category/create-category.component';
-import { EditCategoryComponent } from './admin/admin page/admin-category-component/edit-category/edit-category.component';
 import { CreateBrandComponent } from './admin/admin page/admin-brand-component/admin-brand-component/create-brand/create-brand.component';
 import { EditBrandComponent } from './admin/admin page/admin-brand-component/admin-brand-component/edit-brand/edit-brand.component';
 import { CreateSubCategoryComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/create-sub-category/create-sub-category.component';
 import { EditSubCategoryComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/edit-sub-category/edit-sub-category.component';
+import { AdminCategoryComponentRoutingModule } from './admin/admin page/admin-category-component/admin-category-routing.module';
+import { EditCategoryComponent } from './admin/admin page/admin-category-component/edit-category/edit-category.component';
+import { AdminSubCategoryComponentRoutingModule } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-subcategory-routing.module';
+import { AdminBrandComponentRoutingModule } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-routing.module';
 
 const appRoutes: Routes = [
   { path: '', component: Sign_inComponent },
   { path: 'signin', component: Sign_inComponent, },
   { path: 'signup', component: Sign_upComponent, },
-  { path: 'profile', component: ProfileComponent, canActivate: [LoginRouteGuardGuard] },
   { path: 'admin', loadChildren: () => import('./admin/admin-component.module').then(m => m.AdminComponentModule), canActivate: [AdminRouteGuardGuard] },
   {
     path: 'user',
     loadChildren: () => import('./user/user-component.module').then(m => m.UserComponentModule),
-
   },
 ]
 @NgModule({
   declarations: [
-    CreateCategoryComponent,
+    ...AdminCategoryComponentRoutingModule.component,
+    ...AdminSubCategoryComponentRoutingModule.component,
+    ...AdminBrandComponentRoutingModule.component,
     AppComponent,
     ProductDisplayComponent,
     Sign_inComponent,
@@ -73,11 +73,7 @@ const appRoutes: Routes = [
     AdminCategoryComponentComponent,
     AdminSubCategoryComponentComponent,
     AdminBrandComponentComponent,
-    EditCategoryComponent,
-    EditSubCategoryComponent,
-    CreateSubCategoryComponent,
-    CreateBrandComponent,
-    EditBrandComponent,
+
   ],
   imports: [
 
@@ -98,7 +94,7 @@ const appRoutes: Routes = [
       preventDuplicates: true
     }),
   ],
-  providers: [ProductService, BrandService, CategoryService, AuthService, AuthGuardService,LocalService,authHeader, SubcategoryService],
+  providers: [ProductService, BrandService, CategoryService, AuthService, AuthGuardService, LocalService, authHeader, SubcategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

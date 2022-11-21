@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'app/service/category.service';
 
 @Component({
@@ -8,10 +8,7 @@ import { CategoryService } from 'app/service/category.service';
   styleUrls: ['./admin-category-component.component.css']
 })
 export class AdminCategoryComponentComponent implements OnInit {
-
-
-
-  constructor(private _categoryService: CategoryService,    private router: Router) { }
+  constructor(    private route: ActivatedRoute,private _categoryService: CategoryService,    private router: Router) { }
 
   listCategory: any = []
   async ngOnInit(): Promise<void> {
@@ -25,7 +22,7 @@ export class AdminCategoryComponentComponent implements OnInit {
     })
   }
   onClickEdit(id:any){
-    this.router.navigate(["/admin/sub-category/edit/"+id])
+    this.router.navigate(['/admin/category',id], { relativeTo: this.route });
   }
 
 }

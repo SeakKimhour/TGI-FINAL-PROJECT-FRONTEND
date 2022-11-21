@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginRouteGuardGuard } from 'app/service/guard/login/login-route-guard.guard';
 import { AddProductComponent } from './create-product/add-product/add-product.component';
-import { FavoriteProductComponent } from './favoriteProduct/favoriteProduct.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDisplayComponent } from './product display/product-display.component';
-import { ProductDetailComponent } from './product display/productDetail/productDetail.component';
+
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponentComponent } from './user-component.component';
 

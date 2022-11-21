@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SubcategoryService } from 'app/service/subcategory.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SubcategoryService } from 'app/service/subcategory.service';
 })
 export class AdminSubCategoryComponentComponent implements OnInit {
 
-  constructor(private _subcategoryService: SubcategoryService, private router: Router) { }
+  constructor(private route:ActivatedRoute,private _subcategoryService: SubcategoryService, private router: Router) { }
 
   listSubCategory: any = []
   async ngOnInit(): Promise<void> {
@@ -26,7 +26,7 @@ export class AdminSubCategoryComponentComponent implements OnInit {
   }
 
   onClickEdit(id: any) {
-    this.router.navigate(["/admin/sub-category/edit/" + id])
+    this.router.navigate(["/admin/sub-category/" + id],{relativeTo:this.route})
   }
 
 

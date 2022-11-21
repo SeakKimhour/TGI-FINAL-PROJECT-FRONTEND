@@ -10,8 +10,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     ...AdminComponentRoutingModule.component,
-
-
   ],
   imports: [
 

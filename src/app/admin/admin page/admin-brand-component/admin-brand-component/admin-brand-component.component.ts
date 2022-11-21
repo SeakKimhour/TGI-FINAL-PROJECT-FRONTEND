@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BrandService } from 'app/service/brand.service';
-import { CategoryService } from 'app/service/category.service';
 
 @Component({
   selector: 'app-admin-brand-component',
@@ -10,7 +9,7 @@ import { CategoryService } from 'app/service/category.service';
 })
 export class AdminBrandComponentComponent implements OnInit {
 
-  constructor(private _brandService: BrandService,    private router: Router) { }
+  constructor( private route: ActivatedRoute,private _brandService: BrandService,    private router: Router) { }
 
   listBrand: any = []
   async ngOnInit(): Promise<void> {
@@ -24,7 +23,7 @@ export class AdminBrandComponentComponent implements OnInit {
     })
   }
   onClickEdit(id:any){
-    this.router.navigate(["/admin/brand/edit/"+id])
+    this.router.navigate(["/admin/brand/"+id], { relativeTo: this.route })
   }
 
 }
