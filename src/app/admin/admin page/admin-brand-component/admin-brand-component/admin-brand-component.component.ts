@@ -14,8 +14,17 @@ export class AdminBrandComponentComponent implements OnInit {
 
   async ngOnInit(){
     this.listBrand = await this._brandService.getAllBrand()
-    console.log(this.listBrand);
+    //console.log(this.listBrand);
+  }
+  onClickAdd(){
 
   }
+
+  // onClickDelete(branding: any) {
+  //   if(confirm("Are you sure to delete your girlfriend?"))
+  //   this._brandService.deleteData(branding).subscribe(data => {
+  //     window.location.reload();
+  //   })
+  // }
 
 }

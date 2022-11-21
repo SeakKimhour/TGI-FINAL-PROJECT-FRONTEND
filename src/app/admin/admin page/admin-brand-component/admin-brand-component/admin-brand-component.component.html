@@ -1,5 +1,5 @@
 <div class="container">
-  <button class="btn btn-success">Create New Brand</button>
+  <button class="btn btn-success" (click)="onClickAdd()">Create New Brand</button>
   <table class="table mt-5">
     <thead>
       <tr>
@@ -9,9 +9,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row"></th>
-        <td>Mark</td>
+      <tr *ngFor="let l of listBrand">
+        <th scope="row">{{l.brand_id}}</th>
+        <td>{{l.brand_name}}</td>
         <td class="d-flex">
           <button class="btn btn-primary">Edit</button>
           <button class="btn btn-danger ms-2">Delete</button>
