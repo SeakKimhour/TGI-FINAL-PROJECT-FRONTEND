@@ -21,6 +21,33 @@ export class CategoryService{
     }
      return this.http.get('https://tgi.final.kunapheap.com/category',httpOptions)
   }
+  createCategory(data:any){
+    let httpOptions = {
+      headers :this.httpHeader.authheader('token'),
+      body:null,
+      param : null,
+
+    }
+    return this.http.post("https://tgi.final.kunapheap.com/category",data,httpOptions)
+  }
+  findByCategoryId(id:any){
+    let httpOptions = {
+      headers :this.httpHeader.authheader('token'),
+      body:null,
+      param : null,
+
+    }
+    return this.http.get("https://tgi.final.kunapheap.com/category/getById?id="+id,httpOptions)
+  }
+  editCategory(data:any,id:any){
+    let httpOptions = {
+      headers :this.httpHeader.authheader('token'),
+      body:null,
+      param : null,
+
+    }
+    return this.http.post("https://tgi.final.kunapheap.com:8080/category/update?id="+id,data,httpOptions)
+  }
 
 
 

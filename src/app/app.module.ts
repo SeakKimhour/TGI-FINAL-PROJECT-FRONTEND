@@ -34,6 +34,8 @@ import { AdminRouteGuardGuard } from './service/guard/admin/admin-route-guard.gu
 import { AdminCategoryComponentComponent } from './admin/admin page/admin-category-component/admin-category-component.component';
 import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
 import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
+import { CreateCategoryComponent } from './admin/admin page/admin-category-component/create-category/create-category.component';
+import { EditCategoryComponent } from './admin/admin page/admin-category-component/edit-category/edit-category.component';
 
 const appRoutes: Routes = [
   { path: '', component: Sign_inComponent },
@@ -49,6 +51,7 @@ const appRoutes: Routes = [
 ]
 @NgModule({
   declarations: [
+    CreateCategoryComponent,
     AppComponent,
     ProductDisplayComponent,
     Sign_inComponent,
@@ -61,9 +64,11 @@ const appRoutes: Routes = [
     FavoriteProductComponent,
     AddProductComponent,
     Sign_upComponent,
-    AdminCategoryComponentComponent, AdminSubCategoryComponentComponent
+    AdminCategoryComponentComponent,
+    AdminSubCategoryComponentComponent
     ,
-    AdminBrandComponentComponent
+    AdminBrandComponentComponent,
+    EditCategoryComponent
   ],
   imports: [
 
