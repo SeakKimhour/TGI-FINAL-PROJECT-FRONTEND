@@ -10,7 +10,7 @@
   },
   "private": true,
   "engines" : {
-    "npm" : "14.19.3"
+    "node" : "14.19.3"
   },
 
   "dependencies": {
