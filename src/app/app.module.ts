@@ -24,8 +24,6 @@ import { Sign_upComponent } from './sign_up/sign_up.component';
 import { LocalService } from './service/local-storage.service';
 import { authHeader } from './service/auth-header.service';
 import { NgxLoadingModule } from "ngx-loading";
-import { ToastrModule } from 'ngx-toastr';
-import { LoginRouteGuardGuard } from './service/guard/login/login-route-guard.guard';
 import { TopSaleComponent } from './user/product display/topSale/topSale.component';
 import { DiscountProductComponent } from './user/product display/discountProduct/discountProduct.component';
 import { AddProductComponent } from './user/create-product/add-product/add-product.component';
@@ -34,12 +32,8 @@ import { AdminCategoryComponentComponent } from './admin/admin page/admin-catego
 import { SubcategoryService } from './service/subcategory.service';
 import { AdminBrandComponentComponent } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-component.component';
 import { AdminSubCategoryComponentComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-sub-category-component.component';
-import { CreateBrandComponent } from './admin/admin page/admin-brand-component/admin-brand-component/create-brand/create-brand.component';
-import { EditBrandComponent } from './admin/admin page/admin-brand-component/admin-brand-component/edit-brand/edit-brand.component';
-import { CreateSubCategoryComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/create-sub-category/create-sub-category.component';
-import { EditSubCategoryComponent } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/edit-sub-category/edit-sub-category.component';
 import { AdminCategoryComponentRoutingModule } from './admin/admin page/admin-category-component/admin-category-routing.module';
-import { EditCategoryComponent } from './admin/admin page/admin-category-component/edit-category/edit-category.component';
+
 import { AdminSubCategoryComponentRoutingModule } from './admin/admin page/admin-subcategory-component/admin-sub-category-component/admin-subcategory-routing.module';
 import { AdminBrandComponentRoutingModule } from './admin/admin page/admin-brand-component/admin-brand-component/admin-brand-routing.module';
 
@@ -86,13 +80,7 @@ const appRoutes: Routes = [
     NgxLoadingModule.forRoot({}),
     RouterModule.forRoot(appRoutes),
     CarouselModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 1000,
-      progressBar: true,
-      progressAnimation: 'increasing',
-      preventDuplicates: true
-    }),
+    BrowserAnimationsModule
   ],
   providers: [ProductService, BrandService, CategoryService, AuthService, AuthGuardService, LocalService, authHeader, SubcategoryService],
   bootstrap: [AppComponent]

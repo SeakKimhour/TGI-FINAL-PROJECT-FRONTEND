@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { BrandService } from 'app/service/brand.service';
 import { ProductService } from 'app/service/product.service';
 import Stepper from 'bs-stepper';
-import { ToastrService } from 'ngx-toastr';
-
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -27,7 +25,7 @@ export class AddProductComponent implements OnInit {
   name = 'Angular';
   private stepper!: Stepper;
 
-  constructor(private _router: Router, _fb:FormBuilder, private _toastr : ToastrService, private _productService: ProductService
+  constructor(private _router: Router, _fb:FormBuilder, private _productService: ProductService
     , private _brandService: BrandService) {
     this.form = _fb.group({
       category : new FormControl('', Validators.required),
@@ -65,11 +63,9 @@ export class AddProductComponent implements OnInit {
     }
     try {
       this._productService.createProduct(addProduct);
-      this._toastr.success('Product Added Successfully','')
+
       this._router.navigate(['/user/home'])
     } catch (error) {
-      this._toastr.error('Something went wrong','')
-
     }
 
   }

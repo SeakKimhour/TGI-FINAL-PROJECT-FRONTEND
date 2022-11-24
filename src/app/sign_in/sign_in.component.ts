@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 
 
-import { ToastrService } from 'ngx-toastr';
 
 import { SigninModel } from '../model/signin.model';
 import { AuthService } from '../service/auth.service';
@@ -18,7 +17,7 @@ export class Sign_inComponent implements OnInit {
   public loading = false;
   form: UntypedFormGroup
 
-  constructor(private _router : Router, private _fb:FormBuilder, private _authService : AuthService,private localStore: LocalService, private _toastr : ToastrService) {
+  constructor(private _router : Router, private _fb:FormBuilder, private _authService : AuthService,private localStore: LocalService) {
     this.form = _fb.group({
 
       username : new FormControl('kimhour', Validators.required),
@@ -46,7 +45,6 @@ export class Sign_inComponent implements OnInit {
         this._router.navigate(['/admin'])
 
       }
-      this._toastr.success('Login Successfully','')
 
     })
 

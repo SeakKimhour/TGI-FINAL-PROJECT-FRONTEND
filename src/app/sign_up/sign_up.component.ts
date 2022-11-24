@@ -5,9 +5,6 @@ import { SignupModel } from 'app/model/signup.model';
 import { AuthService } from 'app/service/auth.service';
 import { LocalService } from 'app/service/local-storage.service';
 
-import { ToastrService } from 'ngx-toastr';
-
-
 @Component({
   selector: 'app-sign_up',
   templateUrl: './sign_up.component.html',
@@ -16,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class Sign_upComponent implements OnInit {
   public loading = false;
   form: FormGroup;
-  constructor(private _router: Router, private _fb: FormBuilder, private _authService: AuthService, private localStore: LocalService, private _toastr: ToastrService) {
+  constructor(private _router: Router, private _fb: FormBuilder, private _authService: AuthService, private localStore: LocalService) {
 
     this.form = _fb.group({
       username: new FormControl('', Validators.required),
@@ -44,7 +41,6 @@ export class Sign_upComponent implements OnInit {
         this._router.navigate(['/admin'])
 
       }
-      this._toastr.success('Login Successfully', '')
     })
 
   }
