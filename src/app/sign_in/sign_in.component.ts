@@ -20,8 +20,8 @@ export class Sign_inComponent implements OnInit {
   constructor(private _router : Router, private _fb:FormBuilder, private _authService : AuthService,private localStore: LocalService) {
     this.form = _fb.group({
 
-      username : new FormControl('kimhour', Validators.required),
-      password : new FormControl('123213', Validators.required)
+      username : new FormControl('', Validators.required),
+      password : new FormControl('', Validators.required)
 
 
 
