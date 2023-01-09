@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
 
 
 
-import { SigninModel } from '../model/signin.model';
-import { AuthService } from '../service/auth.service';
-import { LocalService } from '../service/local-storage.service';
+import { SigninModel } from '../../model/signin.model';
+import { AuthService } from '../../service/auth.service';
+import { LocalService } from '../../service/local-storage.service';
 @Component({
   selector: 'app-sign_in',
   templateUrl: './sign_in.component.html',
